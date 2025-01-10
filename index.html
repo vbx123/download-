@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoveTube - تحميل فيديوهات</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .admin-link {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .admin-link a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>LoveTube - تحميل فيديوهات من يوتيوب</h1>
+        <form action="/download" method="POST">
+            <input type="text" name="url" placeholder="أدخل رابط الفيديو" required><br>
+            <label for="quality">اختر الجودة:</label>
+            <select name="quality" id="quality">
+                <option value="best">أفضل جودة</option>
+                <option value="bestaudio">أفضل صوت</option>
+                <option value="worst">أسوأ جودة</option>
+            </select><br>
+            <button type="submit">تحميل الفيديو</button>
+        </form>
+        <div class="message">{{ message }}</div>
+
+        <!-- رابط الانتقال إلى صفحة الإدارة -->
+        <div class="admin-link">
+            <a href="/admin">إدارة التحميلات (محمية بكلمة سر)</a>
+        </div>
+    </div>
+
+</body>
+</html>

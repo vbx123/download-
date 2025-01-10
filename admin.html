@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة تحميلات LoveTube</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; text-align: center; padding: 50px;}
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+
+    <h2>إدارة تحميلات LoveTube</h2>
+    <table>
+        <tr>
+            <th>اسم الفيديو</th>
+            <th>رابط الفيديو</th>
+            <th>تاريخ التحميل</th>
+        </tr>
+        {% for download in downloads %}
+        <tr>
+            <td>{{ download.name }}</td>
+            <td>{{ download.url }}</td>
+            <td>{{ download.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>
